@@ -78,8 +78,7 @@ RUN docker-php-ext-install pdo_mysql && \
     docker-php-ext-install calendar && \
     docker-php-ext-install exif
 
-
-# Install GD with WebP support
+# Install Freetype with WebP support
 RUN apt-get -y update && \
     apt-get --no-install-recommends install -y \
     libfreetype6-dev \
