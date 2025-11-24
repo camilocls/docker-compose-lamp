@@ -6,3 +6,6 @@
 /www/**
 .DS_Store
 /buildtest
+
+# Ignore the override file
+docker-compose.override.yml
