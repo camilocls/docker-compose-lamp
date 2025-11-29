@@ -89,6 +89,16 @@ RUN apt-get -y update && \
     docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg --with-webp && \
     docker-php-ext-install gd
 
+RUN apt-get update && apt-get install -y \
+    zsh \
+    git \
+    curl && \
+    # Install Oh My Zsh (unattended)
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended && \
+    # Set up Zsh configuration
+    # Set zsh as default shell
+    chsh -s /bin/zsh
+
 # Insure an SSL directory exists
 RUN mkdir -p /etc/apache2/ssl
 
